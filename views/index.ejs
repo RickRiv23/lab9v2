@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lab 9</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/styles.css" type="text/css" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <h1>Search Famous Quotes</h1>
+        <form action="/quotes">
+            <label for="searchTerm">
+                Keyword: <input id="searchTerm" name="searchTerm" type="text" >
+            </label>
+            <label>
+                Author: 
+                <select id="searchAuthor" name="author">
+                    <option value=""> Select One </option>
+                    
+                    <% authors.forEach(function(i){ %>
+                    
+                        <option value="<%=i.authorId%>"> <%=i.firstName%> <%=i.lastName%> </option>
+                    
+                    <% }); %>
+                    
+                </select>
+            </label>
+            <label>
+                Gender: 
+                <select id="searchGender" name="gender">
+                    <option value=""> Select One </option>
+                    <option value="M"> Male </option>
+                    <option value="F"> Female </option>
+                </select>
+            </label>
+            <label>
+                Category: 
+                <select id="searchCategory" name="category">
+                    <option value=""> Select One </option>
+                    
+                    <% categories.forEach(function(i){ %>
+                    
+                        <option value="<%=i.category%>"> <%=i.category%>  </option>
+                    
+                    <% }); %>
+                    
+                </select>
+            </label>
+            <input class="js-search-btn" type='submit' value='Search'>
+        </form>
+        
+        
+        <div class="quotes-container">
+            <h1>Quotes Found:</h1>
+            <div class="js-quotes">
+                
+            </div>
+        </div>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="authorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"><h1 id="authorName"></h1></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                
+                 <div>
+                     <figure>
+                        <img id="authorImg" src="">
+                        <figcaption>
+                            <h1 id="authorName"></h1>
+                            <p id="bio"></p>
+                        </figcaption>
+                    </figure>
+                </div>
+                
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="/scripts.js"></script>
+    </body>
+</html>
