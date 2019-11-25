@@ -132,7 +132,7 @@ function getAuthors(){
         
            conn.query(sql, function (err, rows, fields) {
               if (err) throw err;
-              //res.send(rows);
+              console.log("Authors received");
               conn.end();
               resolve(rows);
            });
@@ -156,7 +156,7 @@ function getCategories(){
         
            conn.query(sql, function (err, rows, fields) {
               if (err) throw err;
-              //res.send(rows);
+              console.log("Categories received");
               conn.end();
               resolve(rows);
            });
