@@ -41,7 +41,7 @@ function dbConnection(){
         database:"cst336_db27"
     }); //createConnection
 
-
+    console.log("DB connection established.");
 return conn;
 
 }
