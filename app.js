@@ -11,7 +11,7 @@ app.get("/", async function(req, res){
     let categories = await getCategories();
     let authors = await getAuthors();
     
-    res.render("index.ejs", {"categories":categories, "authors":authors});
+    res.render("index", {"categories":categories, "authors":authors});
 }); //root route
 
 app.get("/quotes", async function(req, res){
