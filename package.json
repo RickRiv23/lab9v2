@@ -2,9 +2,6 @@
   "name": "lab9v2",
   "version": "1.0.0",
   "description": "",
-  "engines": {
-    "node": "*"
-  },
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
@@ -16,13 +13,13 @@
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/RickRiv23/lab9v2/issues"
-  },
   "homepage": "https://github.com/RickRiv23/lab9v2#readme",
   "dependencies": {
     "mysql": "^2.17.1",
     "sql": "^0.78.0",
     "express": "*"
+  },
+  "engines": {
+    "node": "10.x"
   }
 }

@@ -1,11 +1,8 @@
+const mysql = require('mysql');
 const express = require("express");
 const app = express();
-app.set('view engine', 'html');
-app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'ejs');
 app.use(express.static("assets"));
-
-const request = require('request');
-const mysql = require('mysql');
 
 
 /* **********ROUTES********** */
