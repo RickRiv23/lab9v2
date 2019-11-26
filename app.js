@@ -135,6 +135,7 @@ function getAuthors(){
               console.log("Authors received");
               conn.end();
               resolve(rows);
+              Promise.catch();
            });
         
         });//connect
@@ -159,6 +160,7 @@ function getCategories(){
               console.log("Categories received");
               conn.end();
               resolve(rows);
+              Promise.catch();
            });
         
         });//connect
