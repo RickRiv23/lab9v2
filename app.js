@@ -8,15 +8,8 @@ app.use(express.static("assets"));
 /* **********ROUTES********** */
 
 app.get("/", async function(req, res){
-    let categories, authors;
-    
-    try{
-        categories = await getCategories();
-        authors = await getAuthors();
-    } catch(err){
-        console.log("Error: " + err);
-        return res.status(500).send();
-    }
+    let categories = await getCategories();
+    let authors = await getAuthors();
     
     res.render("index", {"categories":categories, "authors":authors});
 }); //root route
@@ -145,7 +138,7 @@ function getAuthors(){
            });
         
         });//connect
-    });//promise
+    }).catch();//promise
 }
 
 function getCategories(){
@@ -169,7 +162,7 @@ function getCategories(){
            });
         
         });//connect
-    });//promise
+    }).catch();//promise
 }
 
 //starting server
