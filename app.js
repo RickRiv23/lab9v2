@@ -121,7 +121,7 @@ function getQuotes(query){
 function getAuthors(){
     let conn = dbConnection();
     
-    return new Promise(function(resolve, reject){
+    const promise = new Promise(function(resolve, reject){
         conn.connect(function(err) {
            if (err) throw err;
            console.log("Connected!");
@@ -138,14 +138,19 @@ function getAuthors(){
            });
         
         });//connect
-    }).catch();//promise
+    });//promise
+    
+    promise.catch(function(err){
+        console.error(err);
+    });
+    return promise;
 }
 
 function getCategories(){
     
     let conn = dbConnection();
     
-    return new Promise(function(resolve, reject){
+    const promise = new Promise(function(resolve, reject){
         conn.connect(function(err) {
            if (err) throw err;
            console.log("Connected!");
@@ -162,7 +167,11 @@ function getCategories(){
            });
         
         });//connect
-    }).catch();//promise
+    });//promise
+    promise.catch(function(err){
+        console.error(err);
+    });
+    return promise;
 }
 
 //starting server
